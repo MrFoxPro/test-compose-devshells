@@ -40,7 +40,7 @@
               config.allowUnfree = true;
             };
             welcome = ''
-              echo "=========$SHELL_NAME=========="
+              echo "=========|$SHELL_NAME|=========="
               FLAKE_ROOT=$(${lib.getExe config.flake-root.package})
               cd "$FLAKE_ROOT/$SHELL_NAME" # This is very important
               echo "$SHELL_NAME> FLAKE_ROOT is $FLAKE_ROOT"
@@ -61,7 +61,7 @@
               ];
             };
             devenv.shells.main = {
-              env.SHELL_NAME = "main";
+              env.SHELL_NAME = "";
               enterShell = welcome;
             };
           });
